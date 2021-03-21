@@ -1,0 +1,10 @@
+.post-item {
+    background-color: #EEEEEE;
+    border: 1px solid red;
+    margin-bottom: 10px;
+    
+}
+
+.post-item h4, p {
+    margin: 10px;
+}

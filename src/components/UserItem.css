@@ -1,0 +1,16 @@
+.user-item {
+    background-color: #EEEEEE;
+    border: 1px solid red;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    
+}
+.user-item > * {
+    padding: 10px 0px 10px 0px;
+    
+    flex: 1;
+    
+    
+}
