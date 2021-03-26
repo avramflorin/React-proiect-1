@@ -29,7 +29,14 @@ class AddUsersForm extends React.Component {
 	constructor() {
 		super();
 		
-		this.state = {formData: {}, formErrors: []};
+		this.state = {
+			formData: {
+				name: "",
+				email: "",
+				isGoldClient: false,
+				img: ""
+			}, 
+			formErrors: []};
 		//	console.log("ne-au venit datele de edit: ", props.rowUser);
 	}
 
@@ -104,19 +111,19 @@ class AddUsersForm extends React.Component {
 			<FormErrors errors={this.state.formErrors} />
 			<input type="hidden" value={this.state.formData.id || ""} />
 			<label htmlFor="name">Nume: *</label>
-			<input type="text" name="name" onChange={(e)=>this.handleChangeInput(e, 'name')} value={this.state.formData.name || ""} />
+			<input type="text" id="name" name="name" onChange={(e)=>this.handleChangeInput(e, 'name')} value={this.state.formData.name || ""} />
 			<label htmlFor="email">Email: *</label>
-			<input type="text" name="email" onChange={e=>this.handleChangeInput(e, 'email')} value={this.state.formData.email || ""} />
+			<input type="text" id="email" name="email" onChange={e=>this.handleChangeInput(e, 'email')} value={this.state.formData.email || ""} />
 			<label htmlFor="salary">Salariu: *</label>
-			<input type="text" name="salary" onChange={e=>this.handleChangeInput(e, 'salary')} value={this.state.formData.salary || ""} />
+			<input type="text" id="salary" name="salary" onChange={e=>this.handleChangeInput(e, 'salary')} value={this.state.formData.salary || ""} />
 			<label htmlFor="isGoldClient">Membru gold: * </label>
-				<select name="isGoldClient" onChange={e=>this.handleChangeInput(e, 'isGoldClient')} value={this.state.formData.isGoldClient || ""}>
+				<select name="isGoldClient" id="isGoldClient" onChange={e=>this.handleChangeInput(e, 'isGoldClient')} value={this.state.formData.isGoldClient || ""}>
 					<option></option>
 					<option value={false}>Nu</option>
 					<option value={true}>Da</option>
 				</select>
-				<label htmlFor="name">Imagine:</label> 
-			<select name="img" onChange={e=>this.handleChangeInput(e, 'img')} value={this.state.formData.img || ""}>
+				<label htmlFor="img">Imagine:</label> 
+			<select name="img" id="img" onChange={e=>this.handleChangeInput(e, 'img')} value={this.state.formData.img || ""}>
 				<option></option>
 			{
 				Aimages.map((value,key) => {
@@ -124,7 +131,7 @@ class AddUsersForm extends React.Component {
 				})
 			}
 			</select>
-			<button onClick={(event)=>this.sendForm(event)}>Trimite</button><br />
+			<button onClick={(event)=>this.sendForm(event)}>Salveaza user</button><br />
 		</form>
 		);
 	}

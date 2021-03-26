@@ -11,7 +11,9 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import {importAllFiles, getMaxId} from '../helpers/Misc_helper.js';
 const Aimages = importAllFiles(require.context('../media/img', false, /\.(png|jpe?g|svg)$/));
 
-
+/**
+ * UserList: contine formularul de adaugare si listarea efectiva userilor
+ */
 class UserList extends React.Component {
 
 	
@@ -87,9 +89,9 @@ class UserList extends React.Component {
 		//	console.log("se adauga: ", userInfo);
 		
 		if(userInfo && Object.keys(userInfo).length > 0) {
+			let users = this.state.users; // este array si nu obiect! deci merge cu asociere si nu cu spread operator
 			if(userInfo.id) {
 				// aici e ramura pentru edit
-				let users = this.state.users;
 				users[userInfo.id] = {
 					id: userInfo.id,
 					name: userInfo.name,
@@ -102,7 +104,6 @@ class UserList extends React.Component {
 				this.setState({users: users});
 			} else {
 				// aici e ramura pentru insert
-				let users = this.state.users;
 				let id = getMaxId(this.state.users);
 				users[id] = {
 					id: id,
@@ -217,7 +218,7 @@ class UserList extends React.Component {
 	}
 
 	componentWillUnmount() {
-		 console.log("UserList: componentWillUnmount; curatare eventuri, timere sau orice altceva vrei sa distrugi");
+		 //	console.log("UserList: componentWillUnmount; curatare eventuri, timere sau orice altceva vrei sa distrugi");
 	}
 }
 

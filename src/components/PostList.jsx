@@ -13,9 +13,6 @@ class PostList extends React.Component {
     
 
     render() {
-        console.log("post: render");
-        
-        
         return (
             <div>
             <h3>Lista posturi</h3>

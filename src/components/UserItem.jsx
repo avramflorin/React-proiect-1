@@ -3,21 +3,21 @@ import {CommaFormatted} from "../helpers/Misc_helper";
 
 
 
-const SaveComponent = (props) => {
-    console.log("props la save", props);
-    return(
-        <>
-        <input type="text" onChange={props.handleChange} value={props.editName} />
-        <button onClick={props.handleSave}>Salveaza</button> 
-        </>
-    );
-}
+// const SaveComponent = (props) => {
+//     console.log("props la save", props);
+//     return(
+//         <>
+//         <input type="text" onChange={props.handleChange} value={props.editName} />
+//         <button onClick={props.handleSave}>Salveaza</button> 
+//         </>
+//     );
+// }
 
-const EditComponent = (props) => {
-    return(
-        <button onClick={props.handleEdit}>Editeaza nume</button>
-    );
-}
+// const EditComponent = (props) => {
+//     return(
+//         <button onClick={props.handleEdit}>Editeaza nume</button>
+//     );
+// }
 
 class UserItem extends React.Component  {
     
@@ -52,15 +52,16 @@ class UserItem extends React.Component  {
     
     render() {
         //console.log("userItem=>render;", this.props);
-        const state = {
-            'view': <EditComponent handleEdit={this.handleEdit}  />,
-            'edit': <SaveComponent handleSave={this.handleSave} editName={this.state.name} handleChange={this.handleChange} />
-        };
+        // const state = {
+        //     'view': <EditComponent handleEdit={this.handleEdit}  />,
+        //     'edit': <SaveComponent handleSave={this.handleSave} editName={this.state.name} handleChange={this.handleChange} />
+        // };
         
         return (
         <div className="user-item" style={{'color': this.props.color}}>
             <div>
-                <h2>{this.state.editedName}</h2>{state[this.state.editMode]}
+                <h2>{this.state.editedName}</h2>
+                {/* initial se putea edita {state[this.state.editMode]} */}
             </div>
             <div>Email: <span id={"email_" + this.props.id}>{this.props.email}</span></div>
             <div>Salariu: {CommaFormatted(this.props.salary, 0)}</div>
