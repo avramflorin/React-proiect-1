@@ -1,6 +1,6 @@
-## Primul proiect de React
+## First React project
 
-#### 1. `git clone hhttps://github.com/avramflorin/React-proiect-1.git`
+#### 1. `git clone https://github.com/avramflorin/React-proiect-1.git`
 
 #### 2. `cd React-proiect-1`
 
