@@ -66,7 +66,7 @@ class UserList extends React.Component {
 		if(this.state.users[id]) {
 			let row = [];
 			//	row = this.state.users[id];	// asa face un mare BUG pt ca nu asa se face asignarea!! row si state.users sunt identice
-			row = {...this.state.users[id]};
+			row = {...this.state.users[id]}; 
 			
 			
 			//	console.log("se incarca: ", this.state.users[id], row);
